@@ -1,0 +1,13 @@
+// The Studio helper as a Cloudflare Worker. Deployed with the "Deploy to Cloudflare" button in the
+// Studio; the KV namespace below is created for you on the first deploy.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "picaffectz-studio-helper-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2025-01-01",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "workers_dev": true,
+  "kv_namespaces": [{ "binding": "HELPER","id": "9b49a24ce37a4f51aca29a1451befbf4" }],
+  // Where the helper page's "Connect to my Studio" button goes. Change it if your Studio runs at another address.
+  "vars": { "STUDIO_URL": "https://iprakashlal.github.io/studio/" }
+}
